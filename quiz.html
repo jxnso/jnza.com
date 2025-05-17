@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Zen</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #4a4a4a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #f7cce7;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 60px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #d48fb0;
+    }
+
+    .question {
+      margin: 20px 0;
+    }
+
+    .answers button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      border: none;
+      background-color: #d48fb0;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .answers button:hover {
+      background-color: #c46d9e;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      display: inline-block;
+      color: #d48fb0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #result {
+      font-size: 1.4em;
+      color: #4a4a4a;
+      margin-top: 30px;
+    }
+
+    #felicitation {
+      font-size: 1.5em;
+      color: #d48fb0;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .correction {
+      text-align: left;
+      margin-top: 20px;
+      background: #ffe4f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .correction h3 {
+      margin-bottom: 10px;
+      color: #c46d9e;
+    }
+
+    .correction p {
+      margin: 8px 0;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧘‍♂️ Quiz Zen</h1>
+    <div class="question" id="question-container"></div>
+    <div class="answers" id="answers-container"></div>
+    <div id="result"></div>
+    <div id="felicitation" style="display:none;">🎉 Bravo ! Tu maîtrises bien l’art du zen !</div>
+    <div class="correction" id="corrections" style="display:none;"></div>
+    <a class="back-link" href="index.html">← Retour à l'accueil</a>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Quel est le meilleur moment pour méditer ?",
+        answers: ["Le matin", "Après manger", "Avant de dormir"],
+        correct: 0
+      },
+      {
+        question: "Que signifie le mot 'zen' ?",
+        answers: ["Calme", "Colère", "Énergie"],
+        correct: 0
+      },
+      {
+        question: "Quel aliment est bon pour se détendre ?",
+        answers: ["Chocolat noir", "Soda", "Chips"],
+        correct: 0
+      },
+      {
+        question: "Quelle est une technique de respiration zen ?",
+        answers: ["Respiration carrée", "Apnée", "Respiration rapide"],
+        correct: 0
+      },
+      {
+        question: "Quelle musique est la plus relaxante ?",
+        answers: ["Ambiance nature", "Hard rock", "Techno rapide"],
+        correct: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let userAnswers = [];
+
+    const questionContainer = document.getElementById("question-container");
+    const answersContainer = document.getElementById("answers-container");
+    const resultContainer = document.getElementById("result");
+    const felicitation = document.getElementById("felicitation");
+    const corrections = document.getElementById("corrections");
+
+    function showQuestion() {
+      const q = questions[currentQuestion];
+      questionContainer.innerHTML = `<p>${q.question}</p>`;
+      answersContainer.innerHTML = "";
+
+      q.answers.forEach((answer, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = answer;
+        btn.onclick = () => handleAnswer(index);
+        answersContainer.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(selectedIndex) {
+      const q = questions[currentQuestion];
+      userAnswers.push({ 
+        question: q.question, 
+        correctAnswer: q.answers[q.correct], 
+        userAnswer: q.answers[selectedIndex], 
+        isCorrect: selectedIndex === q.correct 
+      });
+
+      if (selectedIndex === q.correct) {
+        score++;
+      }
+
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      questionContainer.innerHTML = "";
+      answersContainer.innerHTML = "";
+      resultContainer.textContent = `Ton score : ${score} / ${questions.length}`;
+
+      if (score === questions.length) {
+        felicitation.style.display = "block";
+      }
+
+      corrections.style.display = "block";
+      corrections.innerHTML = "<h3>📘 Corrections :</h3>";
+
+      userAnswers.forEach((item, index) => {
+        if (!item.isCorrect) {
+          corrections.innerHTML += `
+            <p>
+              <strong>${index + 1}. ${item.question}</strong><br/>
+              ❌ Ta réponse : <span class="incorrect">${item.userAnswer}</span><br/>
+              ✅ Bonne réponse : <span class="correct">${item.correctAnswer}</span>
+            </p>
+          `;
+        }
+      });
+
+      if (score === questions.length) {
+        corrections.innerHTML += `<p style="color: green;">Aucune erreur, bravo ! 🎉</p>`;
+      }
+    }
+
+    // Lancer le quiz
+    showQuestion();
+  </script>
+</body>
+<footer>
+  <p>Made with 💖 by <strong>Jannah</strong> & <strong>Nada</strong></p>
+  <p><a href="options.html">⬅ Retour aux options</a></p>
+</footer>
+
+</html>

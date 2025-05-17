@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Fact 💡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact 📧</a>
+        <a href="presentation.html">Présentation ✨</a>
+        <a href="music.html">Musique 🎧</a>
+      </nav>
+      <h1>💡 Fun Fact pour égayer ta journée !</h1>
+    </header>
+
+    <section class="funfact-content">
+      <!-- Ajout de l'ID fun-fact-text pour que le script puisse le cibler -->
+      <p id="fun-fact-text" class="funfact-text">
+        Saviez-vous que le rire est l'un des meilleurs remèdes pour réduire le stress ? 🤣
+        N'hésite pas à rire un bon coup !
+      </p>
+
+      <img src="fun.png" alt="Fun image" class="fun-img">
+
+    </section>
+
+    <script>
+      const funFacts = [
+        "Les chats dorment en moyenne 16 heures par jour. 🐱💤",
+        "Le rire réduit le stress et améliore la mémoire. 😂🧠",
+        "Les plantes réagissent à la musique douce. 🌱🎵",
+        "Respirer profondément peut réduire l'anxiété en quelques minutes. 🌬️💗",
+        "Boire de l’eau améliore l'humeur ! 💧😊"
+      ];
+
+      const randomIndex = Math.floor(Math.random() * funFacts.length);
+      document.getElementById("fun-fact-text").textContent = funFacts[randomIndex];
+    </script>
+
+    <footer>
+  <p>Made with 💖 by <strong>Jannah</strong> & <strong>Nada</strong></p>
+  <p><a href="options.html">⬅ Retour aux options</a></p>
+</footer>
+
+  </div>
+</body>
+</html>

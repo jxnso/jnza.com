@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jeux Zen</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #4a4a4a;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #d48fb0;
+    }
+    .game-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .game-buttons button {
+      background-color: #f7cce7;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      width: 200px;
+    }
+    .game-buttons button:hover {
+      background-color: #d48fb0;
+    }
+    .back-link {
+      margin-top: 60px;
+      display: inline-block;
+      color: #d48fb0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Choisis ton jeu zen</h1>
+  <div class="game-buttons">
+    <button onclick="window.location.href='memo.html'">🧠 Mémo Relax</button>
+    <button onclick="window.location.href='quiz.html'">📝 Quiz Zen</button>
+  </div>
+  <a class="back-link" href="index.html">← Retour à l'accueil</a>
+</body>
+<footer>
+  <p>Made with 💖 by <strong>Jannah</strong> & <strong>Nada</strong></p>
+  <p><a href="options.html">⬅ Retour aux options</a></p>
+</footer>
+
+</html>

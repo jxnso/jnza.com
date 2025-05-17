@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <div class="container">
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="contact.html">Contact 📧</a>
+      <a href="presentation.html">Présentation ✨</a>
+    </nav>
+  </header>
+</div>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeMind - Découvrir</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #4a4a4a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: #f7cce7;
+      width: 80%;
+    }
+    h1 {
+      color: #d48fb0;
+      font-size: 2.5em;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .button-container button {
+      background-color: #f7cce7;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 200px;
+    }
+    .button-container button:hover {
+      background-color: #d48fb0;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Explore FreeMind et tout ce qu'on a à offrir</h1>
+    <div class="button-container">
+      <button onclick="window.location.href='breathing.html'">
+        <img src="breathe.png" alt="Respiration" />
+        Respiration
+      </button>
+      <button onclick="window.location.href='funfact.html'">
+        <img src="fun.png" alt="Fun fact" />
+        Fun Fact
+      </button>
+      <button onclick="window.location.href='music.html'">
+        <img src="music.png" alt="Music" />
+        Chill Music
+      </button>
+      <!-- Nouveau bouton Yoga du Rire -->
+      <button onclick="window.location.href='yoga.html'">
+        <img src="yoga.png" alt="Yoga du Rire" />
+        Yoga du Rire
+      </button>
+    </div>
+  </div>
+</body>
+</html>

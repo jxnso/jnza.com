@@ -1,0 +1,101 @@
+<!-- MEMORY GAME -->
+<section class="memory-section">
+  <h2>🧘‍♀️ Memory Zen : retrouve les paires !</h2>
+  <div id="memory-game"></div>
+</section>
+
+<style>
+#memory-game {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.memory-card {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border: 2px solid #d48fb0;
+  border-radius: 10px;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #ffe4f2;
+  text-align: center;
+  border-top: 2px solid #d48fb0;
+}
+footer a {
+  color: #d48fb0;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<script>
+const emojis = ["😌", "🎧", "🌿", "🐱", "😂", "☀️"];
+let cards = [...emojis, ...emojis];
+cards = cards.sort(() => 0.5 - Math.random());
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+
+const gameContainer = document.getElementById("memory-game");
+
+cards.forEach(emoji => {
+  const card = document.createElement("div");
+  card.classList.add("memory-card");
+  card.textContent = "❓";
+  card.dataset.emoji = emoji;
+  card.onclick = () => flipCard(card);
+  gameContainer.appendChild(card);
+});
+
+function flipCard(card) {
+  if (lockBoard || card === firstCard || card.textContent !== "❓") return;
+
+  card.textContent = card.dataset.emoji;
+
+  if (!firstCard) {
+    firstCard = card;
+  } else {
+    secondCard = card;
+    lockBoard = true;
+
+    if (firstCard.dataset.emoji === secondCard.dataset.emoji) {
+      firstCard = null;
+      secondCard = null;
+      lockBoard = false;
+    } else {
+      setTimeout(() => {
+        firstCard.textContent = "❓";
+        secondCard.textContent = "❓";
+        firstCard = null;
+        secondCard = null;
+        lockBoard = false;
+      }, 800);
+    }
+  }
+}
+</script>
+
+<!-- Bouton retour accueil -->
+<a style="display:block; margin-top:40px; text-align:center; color:#d48fb0; font-weight:bold;" href="index.html">
+  ← Retour à l'accueil
+</a>
+
+<!-- Footer avec lien vers options -->
+<footer>
+  <p>Made with 💖 by <strong>Jannah</strong> & <strong>Nada</strong></p>
+  <p><a href="options.html">⬅ Retour aux options</a></p>
+</footer>
