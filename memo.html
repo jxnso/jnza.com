@@ -50,6 +50,9 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
+let matchedPairs = 0;  // Compteur des paires trouvées
+const totalPairs = emojis.length;
+
 const gameContainer = document.getElementById("memory-game");
 
 cards.forEach(emoji => {
@@ -73,9 +76,14 @@ function flipCard(card) {
     lockBoard = true;
 
     if (firstCard.dataset.emoji === secondCard.dataset.emoji) {
+      matchedPairs++;
       firstCard = null;
       secondCard = null;
       lockBoard = false;
+
+      if (matchedPairs === totalPairs) {
+        alert("Bravo ! Tu as gagné le jeu 🎉");
+      }
     } else {
       setTimeout(() => {
         firstCard.textContent = "❓";
