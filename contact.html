@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - CyberNinja</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
       <nav>
         <a href="index.html">Accueil</a>
-        <a href="contact.html">Contact 📧</a>
         <a href="presentation.html">Présentation ✨</a>
-        <a href="music.html">Musique 🎧</a>
+        <a href="dangers.html">Dangers ⚠️</a>
+        <a href="solutions.html">Solutions 🛡️</a>
+        <a href="apprendre.html">Apprendre 📚</a>
+        <a href="mini-jeux.html">Mini-jeux 🎮</a>
+        <a href="contact.html" aria-current="page">Contact 📧</a>
       </nav>
-    </header>Vous avez une question, une suggestion originale ou simplement envie de m’envoyer un petit message ? Quelle que soit votre intention, je serai ravie de vous lire. 📨
+    </header>
 
-Que ce soit pour proposer une amélioration du site, partager une anecdote insolite ou papoter autour de sujets variés — détente, défis du quotidien ou même musique — n’hésitez surtout pas à me contacter. 🐱💤
+    <main>
+      <section class="contact-intro">
+        <p>
+          Vous avez une question, une suggestion originale ou simplement envie de m’envoyer un petit message ?  
+          Quelle que soit votre intention, je serai ravie de vous lire. 📨
+        </p>
+        <p>
+          Que ce soit pour proposer une amélioration du site, partager une anecdote insolite ou papoter autour de sujets variés — détente, défis du quotidien ou même musique — n’hésitez surtout pas à me contacter. 🐱💤
+        </p>
+        <p>
+          Je suis une élève passionnée par le bien-être et la philosophie zen, et j’adorerais échanger avec vous. 😊
+        </p>
+      </section>
 
-Je suis une élève passionnée par le bien-être et la philosophie zen, et j’adorerais échanger avec vous. 😊
+      <section class="contact-info">
+        <h2>Contactez-moi</h2>
+        <ul>
+          <li>Email : <a href="mailto:jannah.zahraoui.2gtb@leonafricain.ma">jannah.zahraoui.2gtb@leonafricain.ma</a></li>
+        </ul>
+        <img src="contact.png" alt="Image représentant un contact" />
+      </section>
 
-Jannah : jannah.zahraoui.2gtb@leonafricain.ma
+      <section class="contact-form-section">
+        <h2>Envoyez-moi un message</h2>
+        <form action="#" method="post">
+          <label for="name">Nom :</label><br />
+          <input type="text" id="name" name="name" required /><br />
 
-    <section class="contact-info">
-      <p>Vous avez une question, une suggestion originale ou simplement envie de nous adresser un message ? Quelle que soit votre intention, nous serons ravies de vous lire. 📨
+          <label for="email">Email :</label><br />
+          <input type="email" id="email" name="email" required /><br />
 
-Si vous souhaitez proposer une amélioration pour notre site, partager une anecdote insolite ou échanger sur des sujets variés tels que la détente, les défis du quotidien ou même la musique, n’hésitez pas à nous contacter. 🐱💤
+          <label for="message">Message :</label><br />
+          <textarea id="message" name="message" rows="5" required></textarea><br />
 
-Nous sommes deux élèves passionnées par le bien-être et la philosophie zen, et nous serions enchantées d’échanger avec vous. 😊
-
-</p>
-
-      <ul>
-        <li>Jannah : <a href="mailto:jannah.zahraoui.2gtb@leonafricain.ma">jannah.zahraoui.2gtb@leonafricain.ma</a></li>
-        <li>Nada : <a href="mailto:nada.alil.2gtb@leonafricain.ma">nada.alil.2gtb@leonafricain.ma</a></li>
-      </ul>
-
-      <!-- Image de contact réduite -->
-      <img src="contact.png" alt="Image de contact" />
-    </section>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
 
     <footer>
-      <p>Made with 💖 by <strong>Jannah</strong> & <strong>Nada</strong></p>
-      
+      <p>Made with 💖 by <strong>Jannah</strong></p>
+      <p><a href="index.html" class="back-to-home">⬅ Retour à l'accueil</a></p>
     </footer>
-
-    <p><a href="index.html" class="back-to-home">⬅ Retour à l'accueil</a></p>
   </div>
 </body>
 </html>
