@@ -64,5 +64,38 @@
   </div>
 
   <a class="back-link" href="recettes.html">⬅ Retour aux recettes</a>
+  <script>
+  const toggleBtn = document.getElementById('mode-toggle');
+  const body = document.body;
+
+  // Fonction pour appliquer le mode selon localStorage
+  function applyMode() {
+    const mode = localStorage.getItem('mode');
+    if (mode === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.textContent = 'Mode Clair ☀️';
+    } else {
+      body.classList.remove('dark-mode');
+      toggleBtn.textContent = 'Mode Sombre 🌙';
+    }
+  }
+
+  // Appliquer le mode au chargement de la page
+  applyMode();
+
+  // Quand on clique sur le bouton
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('mode', 'dark');
+      toggleBtn.textContent = 'Mode Clair ☀️';
+    } else {
+      localStorage.setItem('mode', 'light');
+      toggleBtn.textContent = 'Mode Sombre 🌙';
+    }
+  });
+</script>
+
 </body>
 </html>
