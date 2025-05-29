@@ -405,6 +405,51 @@ body.dark-mode #mode-toggle {
 body.dark-mode #mode-toggle:hover {
   background-color: #9b70a1;
 }
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #222;
+  color: #eee;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #333;
+  color: #ddd;
+}
+
+body.dark-mode nav {
+  background-color: #444;
+}
+
+body.dark-mode nav a {
+  color: #ffb6c1; /* rose clair pour les liens en dark */
+}
+
+body.dark-mode nav a:hover {
+  color: #ffa0c0;
+}
+
+body.dark-mode .discover-btn,
+body.dark-mode .option-btn,
+body.dark-mode .buttons-container button {
+  background-color: #555;
+  color: #f0c8d8;
+}
+
+body.dark-mode .discover-btn:hover,
+body.dark-mode .option-btn:hover,
+body.dark-mode .buttons-container button:hover {
+  background-color: #777;
+}
+
+/* Pour les images on peut faire un léger filtre */
+body.dark-mode .fleur-image,
+body.dark-mode .zen-image,
+body.dark-mode .music-image {
+  filter: brightness(0.8) contrast(1.1);
+  transition: filter 0.5s ease;
+}
 
 
 
