@@ -333,4 +333,33 @@ header h1 {
     transform: translateY(0);
   }
 }
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #f9d5e5;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #f9d5e5;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+body {
+  background: linear-gradient(120deg, #ffe4f2, #fffafc);
+  animation: gradientShift 10s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
 
