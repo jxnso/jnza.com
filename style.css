@@ -405,51 +405,77 @@ body.dark-mode #mode-toggle {
 body.dark-mode #mode-toggle:hover {
   background-color: #9b70a1;
 }
-/* Dark mode styles */
+/* Dark mode vibe plus douce */
 body.dark-mode {
-  background-color: #222;
-  color: #eee;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: #2a2a3d; /* un bleu nuit doux */
+  color: #e0e0f0; /* texte clair plus relax */
+  transition: background-color 0.7s ease, color 0.7s ease;
 }
 
 body.dark-mode header,
 body.dark-mode footer {
-  background-color: #333;
-  color: #ddd;
+  background-color: #3c3c5c;
+  color: #d0d0e0;
+  transition: background-color 0.7s ease, color 0.7s ease;
 }
 
 body.dark-mode nav {
-  background-color: #444;
+  background-color: #44476a;
+  transition: background-color 0.7s ease;
 }
 
 body.dark-mode nav a {
-  color: #ffb6c1; /* rose clair pour les liens en dark */
+  color: #a8a9ff;
+  transition: color 0.5s ease;
 }
 
 body.dark-mode nav a:hover {
-  color: #ffa0c0;
+  color: #d4d4ff;
 }
 
 body.dark-mode .discover-btn,
 body.dark-mode .option-btn,
 body.dark-mode .buttons-container button {
-  background-color: #555;
-  color: #f0c8d8;
+  background-color: #55587a;
+  color: #c8caff;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.dark-mode .discover-btn:hover,
 body.dark-mode .option-btn:hover,
 body.dark-mode .buttons-container button:hover {
-  background-color: #777;
+  background-color: #6a6db2;
+  transform: scale(1.1);
 }
 
-/* Pour les images on peut faire un léger filtre */
 body.dark-mode .fleur-image,
 body.dark-mode .zen-image,
 body.dark-mode .music-image {
-  filter: brightness(0.8) contrast(1.1);
-  transition: filter 0.5s ease;
+  filter: brightness(0.85) saturate(1.1);
+  transition: filter 0.7s ease;
 }
 
+/* Animation super smooth pour le bouton toggle */
+#mode-toggle {
+  background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 102, 153, 0.4);
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+}
 
+#mode-toggle:hover {
+  background: linear-gradient(135deg, #ff65a3, #ff7eb9);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 102, 153, 0.6);
+}
 
+#mode-toggle:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(255, 102, 153, 0.3);
+}
