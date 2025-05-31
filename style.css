@@ -479,3 +479,18 @@ body.dark-mode .music-image {
   transform: scale(0.95);
   box-shadow: 0 3px 10px rgba(255, 102, 153, 0.3);
 }
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.music-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
