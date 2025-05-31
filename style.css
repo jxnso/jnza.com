@@ -493,4 +493,22 @@ body.dark-mode .music-image {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border: none;
 }
+header {
+  background-color: #ffd6e7;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #cc6699;
+}
 
